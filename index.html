@@ -12,9 +12,11 @@
 
     <link rel="stylesheet" href="./css/style.css"/>
 </head>
-<body class="container">
-    <header class="row">
-        <img class="img-fluid col-md-2 mt-4 mb-4"
+<body class="resources-page">
+    <header class="site-header">
+     <div class="container">
+       <div class="row">
+        <img class="img-fluid col-md-2 mt-4 mb-4 header-image"
         alt="Mount Mary University's logo."
         src="img/mt_mary_logo.jpg"
         />
@@ -32,58 +34,64 @@
                 </li>
             </ul>
         </nav>
+       </div>
+     </div>
     </header>
-    <main>
+    <main class="container">
         <section class="row">
-            <h1>Campus Resources</h1>
-            <div class="card col-md-6 mt-2 ps-4 pt-4">
+            <h1 class="ps-4">Campus Resources</h1>
+            <div class="card col-md-6 mt-2 ps-4 pt-4 resources-card">
+              <article>
                 <h2>Resource 1</h2>
-                <p>Resource 1 Description
+                <p>Resource 1 Description</p>
                     <ul>
                         <li>Service 1</li>
                         <li>Service 2</li>
                         <li>Service 3</li>
                         <li>Service 4</li>
                     </ul>
-                </p>
+              </article>
+              <article>
                 <h2>Resource 2</h2>
-                <p>Resource 2 Description
+                <p>Resource 2 Description</p>
                     <ul>
                         <li>Service 1</li>
                         <li>Service 2</li>
                         <li>Service 3</li>
                         <li>Service 4</li>
-                    </ul>
-                </p>
+                    </ul>               
+              </article>
+              <article>
                 <h2>Resource 3</h2>
-                <p>Resource 3 Description
+                <p>Resource 3 Description</p>
                     <ul>
                         <li>Service 1</li>
                         <li>Service 2</li>
                         <li>Service 3</li>
                         <li>Service 4</li>
                     </ul>
-                </p>
+              </article>
+              <article>
                 <h2>Resource 4</h2>
-                <p>Resource 4 Description
+                <p>Resource 4 Description</p>
                     <ul>
                         <li>Service 1</li>
                         <li>Service 2</li>
                         <li>Service 3</li>
                         <li>Service 4</li>
                     </ul>
-                </p>
+              </article>
             </div>
-              <div class="col-md-6 mt-2">
-                <img class="img-fluid"
+            <div class="col-md-6 mt-2">
+                <img class="img-fluid resources-image"
                     alt="A picture of Mount Mary University."
                     src="img/mount_mary_uni.jpg"
                 />
-              </div>
+            </div>
         </section>
         <section>
             <h2 class="text-center mt-4">Community Resources</h2>
-            <div class="card mt-3 mb-3">
+            <article class="card mt-3 mb-3">
                 <h3 class="card-header">Resource 1</h3>
                 <div class="row align-items-center p-3">
                     <div class="col-md-2">
@@ -99,8 +107,8 @@
                         <a href="#" class="btn btn-light">Placeholder Button</a>
                     </div>
                 </div>
-            </div>
-            <div class="card mt-3 mb-3">
+            </article>
+            <article class="card mt-3 mb-3">
                 <h3 class="card-header">Resource 2</h3>
                 <div class="row align-items-center p-3">
                     <div class="col-md-2">
@@ -116,8 +124,8 @@
                         <a href="#" class="btn btn-light">Placeholder Button</a>
                     </div>
                 </div>
-            </div>
-            <div class="card mt-3 mb-3">
+            </article>
+            <article class="card mt-3 mb-3">
                 <h3 class="card-header">Resource 3</h3>
                 <div class="row align-items-center p-3">
                     <div class="col-md-2">
@@ -133,8 +141,8 @@
                         <a href="#" class="btn btn-light">Placeholder Button</a>
                     </div>
                 </div>
-            </div>
-            <div class="card mt-3 mb-3">
+            </article>
+            <article class="card mt-3 mb-3">
                 <h3 class="card-header">Resource 4</h3>
                 <div class="row align-items-center p-3">
                     <div class="col-md-2">
@@ -150,17 +158,37 @@
                         <a href="#" class="btn btn-light">Placeholder Button</a>
                     </div>
                 </div>
-            </div>
+            </article>
         </section>
-        <article>
-            <h3 class="text-center mb-4 mt-4">Campus Map</h3>
-            <img class="d-block mx-auto w-50"
-            alt="A placeholder map of Mount Mary University."
-            src="img/mt_mary_map.png"
-            />
-        </article>
+        <section>
+          <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h2 class="mb-3 mt-3">Campus Map</h2>
+                <div class="mb-3">
+                    <label for="campusMap" class="form-label">
+                        Choose a Location
+                    </label>
+                    <select id="campusLocation" class="form-select">
+                        <option value="">Select a location</option>
+                        <option value="library">Haggerty Library</option>
+                        <option value="sucessCenter">Student Success Center</option>
+                        <option value="counselingCenter">Counseling and Wellness Center</option>
+                    </select>
+                    <div class="d-flex justify-content-center mt-4">
+                        <button type="button" class="btn btn-primary">
+                            Find a Location
+                        </button>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <img class="d-block mx-auto w-50"
+           alt="A placeholder map of Mount Mary University."
+           src="img/mt_mary_map.png"
+           />
+        </section>
     </main>
-    <footer class="bg-light py-4 mt-4">
+    <footer class="py-4 mt-4">
         <nav class="container">
             <ul class="list-unstyled d-flex justify-content-center gap-3">
                 <li>
