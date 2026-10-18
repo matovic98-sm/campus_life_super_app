@@ -12,10 +12,14 @@
 
     <link rel="stylesheet" href="./css/style.css"/>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
+<body class = "container">
+    <header class="row">
+        <img class="img-fluid col-md-2 mt-4 mb-4"
+        alt="Mount Mary University's logo."
+        src="img/mt_mary_logo.jpg"
+        />
+        <nav class="col-md-10 mt-4">
+            <ul class="list-unstyled d-flex justify-content-end gap-4">
                 <li>
                     <a href="index.html"> 
                         Resources
@@ -28,9 +32,97 @@
                 </li>
             </ul>
         </nav>
-    </header>    
-
-
+    </header>   
+    <main>
+        <section>
+            <h1 class="text-center mb-4">Campus Dining</h1>
+            <img
+                class="img-fluid w-100 mb-4"
+                alt="A picture of a variety of foods on a table."
+                src="img/foods_image.jpg"
+            />
+            <div class="card mt-2 p-4">
+                <div class="row g-4">           
+                    <aside class="col-md-6 text-center d-flex flex-column justify-content-center">
+                        <h2 class="h5">Hours and Location</h2>
+                    </aside>
+                    <div class="col-md-6">
+                        <h2 class="h5 mb-3">Find a Menu</h2>
+                        <div class="mb-3">
+                            <label for="menuDate" class="form-label">
+                                Date
+                            </label>
+                            <select id="menuDate" class="form-select">
+                                <option value="">Select a date</option>
+                                <option value="today">Today</option>
+                                <option value="tomorrow">Tomorrow</option>
+                                <option value="monday">Monday</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mealType" class="form-label">
+                                Meal Type
+                            </label>
+                            <select id="mealType" class="form-select">
+                                <option value="">Select a meal</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dietaryNeeds" class="form-label">
+                                Dietary Needs
+                            </label>
+                            <select id="dietaryNeeds" class="form-select">
+                                <option value="">Select dietary needs</option>
+                                <option value="vegetarian">Vegetarian</option>
+                                <option value="vegan">Vegan</option>
+                                <option value="gluten-free">Gluten-free</option>
+                                <option value="dairy-free">Dairy-free</option>
+                                <option value="no-preference">No preference</option>
+                            </select>
+                            <div class="d-flex justify-content-center mt-4">
+                                <button type="button" class="btn btn-primary">
+                                    Find Menu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class = "row">
+            <h2 class ="text-center mb-4 mt-4">Menu Items</h2>
+            <div class = "card col-md-12 mt-2 ps-4">
+                <h3 class="mt-4">Menu Item 1</h3>
+                    <p class="mb-3">Description</p>
+                <h3 class="mt-4">Menu Item 2</h3>
+                    <p class="mb-3">Description</p>
+                <h3 class="mt-4">Menu Item 3</h3>
+                    <p class="mb-3">Description</p>
+                <h3 class="mt-4">Menu Item 3</h3>
+                    <p class="mb-3">Description</p>
+            </div>
+        </section>
+        <section class = "container my-5">
+            <h3 class = "text-center mb-4">Local Dining</h3>
+            <div id = "dining-container" class = "row">
+            </div>
+        </section>
+    </main>
+        <footer class="bg-light py-4 mt-4">
+            <nav class="container">
+                <ul class="list-unstyled d-flex justify-content-center gap-3">
+                    <li>
+                        <a href="index.html" class="btn btn-light">Resources</a>
+                    </li>
+                    <li>
+                        <a href="page2.html" class="btn btn-light">Events</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
 
     <script src="./js/script.js"></script>
 </body>
