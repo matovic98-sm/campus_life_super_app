@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +10,10 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css"/>
 </head>
+<!--Created the dining-page class to separately style this page-->
 <body class="dining-page">
     <header class="site-header">
+        <!--Created a container to wrap the header's contents-->
         <div class="container">
             <div class="row">
                 <img class="img-fluid col-md-2 mt-4 mb-4 header-image"
@@ -32,11 +33,13 @@
             </div>
         </div>
     </header>
+    <!--Created a container to wrap the page's main content-->
     <main class="container">
         <section class="campus-dining-section mb-4">
             <h1 class="text-center mb-4">Campus Dining</h1>
             <div class="card-container">
                 <div class="card p-4">
+                    <!--Created a table within a card to display dining hours-->
                     <div class="row g-4">
                         <div class="col-md-6">
                             <h2 class="h5 text-center mb-4">Alumnae Dining Room Hours</h2>
@@ -57,6 +60,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+
                             <h3 class="h6 mt-3">Saturday through Sunday</h3>
                             <table class="table table-sm">
                                 <tbody>
@@ -71,6 +75,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <!--Created three dropdown option menus for date, meal type, and dietary needs-->
                         <div class="col-md-6">
                             <h2 class="h5 mb-3 text-center">Find a Menu</h2>
                             <div class="mb-3">
@@ -82,6 +87,7 @@
                                     <option value="monday">Monday</option>
                                 </select>
                             </div>
+
                             <div class="mb-3">
                                 <label for="mealType" class="form-label">Meal Type</label>
                                 <select id="mealType" class="form-select">
@@ -91,6 +97,7 @@
                                     <option value="dinner">Dinner</option>
                                 </select>
                             </div>
+
                             <div class="mb-3">
                                 <label for="dietaryNeeds" class="form-label">Dietary Needs</label>
                                 <select id="dietaryNeeds" class="form-select">
@@ -101,6 +108,7 @@
                                     <option value="dairy-free">Dairy-free</option>
                                     <option value="no-preference">No preference</option>
                                 </select>
+
                                 <div class="d-flex justify-content-center mt-4">
                                     <button type="button" class="btn btn-primary">Find Menu</button>
                                 </div>
@@ -110,32 +118,60 @@
                 </div>
             </div>
         </section>
+        <!--Created a section to display menu items as a card-->
         <section class="row">
             <h2 class="text-center mb-4 mt-4">Menu Items</h2>
             <div class="card col-md-12 mt-2 ps-4 menu-items-card">
+                <!--Separated each menu item and its description as articles-->
                 <article>
-                    <h3 class="mt-4">Menu Item 1</h3>
-                    <p class="mb-3">Description</p>
+                    <h3 class="mt-4">Grilled Chicken Rice Bowl</h3>
+                    <p class="mb-3">
+                        Grilled chicken served over rice with a selection of vegetables.
+                    </p>
                 </article>
                 <article>
-                    <h3 class="mt-4">Menu Item 2</h3>
-                    <p class="mb-3">Description</p>
+                    <h3 class="mt-4">Garden Vegetable Pasta</h3>
+                    <p class="mb-3">
+                        Pasta tossed with garden vegetables and tomato sauce.
+                    </p>
                 </article>
                 <article>
-                    <h3 class="mt-4">Menu Item 3</h3>
-                    <p class="mb-3">Description</p>
+                    <h3 class="mt-4">Turkey and Cheese Sandwich</h3>
+                    <p class="mb-3">
+                        Sliced turkey and cheese served on bread with fresh lettuce.
+                    </p>
                 </article>
                 <article>
-                    <h3 class="mt-4">Menu Item 4</h3>
-                    <p class="mb-3">Description</p>
+                    <h3 class="mt-4">Black Bean Veggie Burger</h3>
+                    <p class="mb-3">
+                        A black bean burger served on a bun with lettuce and tomato.
+                    </p>
+                </article>
+                <article>
+                    <h3 class="mt-4">Berry Yogurt Parfait</h3>
+                    <p class="mb-3">
+                        Yogurt layered with berries and granola.
+                    </p>
+                </article>
+                <article>
+                    <h3 class="mt-4">Chocolate Chip Cookie</h3>
+                    <p class="mb-3">
+                        A cookie with chocolate chips, offered as a sample dessert item.
+                    </p>
                 </article>
             </div>
         </section>
+        <!--Created a section where local dining API data will be returned-->
         <section class="container my-5">
-            <h3 class="text-center mb-4">Local Dining</h3>
-            <div id="dining-container" class="row"></div>
+            <h2 class="text-center mb-4">Local Dining</h2>
+            <p class="text-center">
+                Explore local restaurants and cafés in Milwaukee.
+            </p>
+            <div id="dining-container" class="row g-3">
+            </div>
         </section>
     </main>
+    <!--Created navigation buttons in the footer for additional ways to reach the Resources and Events pages-->
     <footer class="py-4 mt-4">
         <nav class="container">
             <ul class="list-unstyled d-flex justify-content-center gap-3">
@@ -148,6 +184,7 @@
             </ul>
         </nav>
     </footer>
+    <!--Link to JavaScript-->
     <script src="./js/script.js"></script>
 </body>
 </html>

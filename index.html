@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+   <!--Created the title for the webpage to be displayed in the browser tab-->
     <title>Resources</title>
-    
+    <!--Link to Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
     crossorigin="anonymous">
-
+    <!--Link to css file for additional webpage styling-->
     <link rel="stylesheet" href="./css/style.css"/>
 </head>
+<!--Applied the resources-page class to style this page separately-->
 <body class="resources-page">
     <header class="site-header">
+    <!--Created a container to wrap the header's content for a responsive layout-->
      <div class="container">
        <div class="row">
+        <!--Used Bootstrap's image class to responsively display the school logo-->
         <img class="img-fluid col-md-2 mt-4 mb-4 header-image"
         alt="Mount Mary University's logo."
         src="img/mt_mary_logo.jpg"
         />
         <nav class="col-md-10 mt-4">
+            <!--Created navigation links to the Events and Dining pages-->
             <ul class="list-unstyled d-flex justify-content-end gap-4">
                 <li>
                     <a href="page2.html"> 
@@ -37,48 +41,59 @@
        </div>
      </div>
     </header>
+    <!--Created a container to wrap the webpages main content-->
     <main class="container">
         <section class="row">
             <h1 class="ps-4">Campus Resources</h1>
+            <!--Displayed campus resource information inside a Bootstrap card-->
             <div class="card col-md-6 mt-2 ps-4 pt-4 resources-card">
+              <!--Separated individual resources and their information with the article tag-->
               <article>
-                <h2>Resource 1</h2>
-                <p>Resource 1 Description</p>
+                <h2>Haggerty Library</h2>
+                <p>
+                    Access library materials, find a place to study, and use research resources to support your coursework.
+                </p>
                     <ul>
-                        <li>Service 1</li>
-                        <li>Service 2</li>
-                        <li>Service 3</li>
-                        <li>Service 4</li>
+                        <li>Study spaces and library materials</li>
+                        <li>Research assistance</li>
+                        <li>Printing and Copying</li>
+                        <li>Study room reservations</li>
                     </ul>
               </article>
               <article>
-                <h2>Resource 2</h2>
-                <p>Resource 2 Description</p>
+                <h2>Student Success Center</h2>
+                <p>
+                    Find academic guidance and support to help you develop study skills, stay organized, and work towards your educational and career goals.
+                </p>
                     <ul>
-                        <li>Service 1</li>
-                        <li>Service 2</li>
-                        <li>Service 3</li>
-                        <li>Service 4</li>
+                        <li>Academic support</li>
+                        <li>Tutoring</li>
+                        <li>Success advising</li>
+                        <li>Career preparation resources</li>
                     </ul>               
               </article>
               <article>
-                <h2>Resource 3</h2>
-                <p>Resource 3 Description</p>
+                <h2>Counseling and Wellness Center</h2>
+                <p>
+                    Explore wellness resources and support options that can help you manage stress and maintain a healthy mind.
+                </p>
                     <ul>
-                        <li>Service 1</li>
-                        <li>Service 2</li>
-                        <li>Service 3</li>
-                        <li>Service 4</li>
+                        <li>Individual and group counseling</li>
+                        <li>Nutrition counseling</li>
+                        <li>Wellness resources</li>
+                        <li>Referrals to additional mental health services</li>
                     </ul>
               </article>
               <article>
-                <h2>Resource 4</h2>
-                <p>Resource 4 Description</p>
+                <h2>Public Safety</h2>
+                <p>
+                    Find campus safety information and learn where to seek assistance with safety concerns while on campus.
+                </p>
                     <ul>
-                        <li>Service 1</li>
-                        <li>Service 2</li>
-                        <li>Service 3</li>
-                        <li>Service 4</li>
+                        <li>Campus safety information</li>
+                        <li>Emergency procedures</li>
+                        <li>Safety assistance contacts</li>
+                        <li>Campus incident reporting information</li>
                     </ul>
               </article>
             </div>
@@ -90,76 +105,106 @@
             </div>
         </section>
         <section>
-            <h2 class="text-center mt-4">Community Resources</h2>
+            <!--Created cards to display community resources-->
+            <h2 class="text-center mt-4 resources-header">Community Resources</h2>
             <article class="card mt-3 mb-3">
-                <h3 class="card-header">Resource 1</h3>
+                <h3 class="card-header">Milwaukee Public Library</h3>
                 <div class="row align-items-center p-3">
                     <div class="col-md-2">
                         <img class="img-fluid"
                         alt="Placeholder image"
-                        src="img/placeholder_img.png"
+                        src="img/mp-library.jpg"
                         />
                     </div>
                     <div class="col-md-7">
-                        <p class="mb-0">Resource 1 Description</p>
+                        <p class="mb-0">
+                            Access public computers, free internet, study rooms, and printing services.
+                        </p>
                     </div>
                     <div class="col-md-3 text-end">
-                        <a href="#" class="btn btn-light">Placeholder Button</a>
+                        <a href="https://www.mpl.org/" 
+                           class="btn btn-light"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           Visit Website
+                        </a>
                     </div>
                 </div>
             </article>
             <article class="card mt-3 mb-3">
-                <h3 class="card-header">Resource 2</h3>
+                <h3 class="card-header">211 Wisconsin</h3>
                 <div class="row align-items-center p-3">
                     <div class="col-md-2">
                         <img class="img-fluid"
                         alt="Placeholder image"
-                        src="img/placeholder_img.png"
+                        src="img/211wisconsin.png"
                         />
                     </div>
                     <div class="col-md-7">
-                        <p class="mb-0">Resource 2 Description</p>
+                        <p class="mb-0">
+                            A starting point for finding local assistance with food, housing, and other needs.
+                        </p>
                     </div>
                     <div class="col-md-3 text-end">
-                        <a href="#" class="btn btn-light">Placeholder Button</a>
+                        <a href="https://211wisconsin.communityos.org/get-help" 
+                           class="btn btn-light"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           Visit Website
+                        </a>
                     </div>
                 </div>
             </article>
             <article class="card mt-3 mb-3">
-                <h3 class="card-header">Resource 3</h3>
+                <h3 class="card-header">Milwaukee Mental Health Resources</h3>
                 <div class="row align-items-center p-3">
                     <div class="col-md-2">
                         <img class="img-fluid"
                         alt="Placeholder image"
-                        src="img/placeholder_img.png"
+                        src="img/mc-mental-health-resources.png"
                         />
                     </div>
                     <div class="col-md-7">
-                        <p class="mb-0">Resource 3 Description</p>
+                        <p class="mb-0">
+                            Information about free and low-cost mental health services in the Milwaukee area.
+                        </p>
                     </div>
                     <div class="col-md-3 text-end">
-                        <a href="#" class="btn btn-light">Placeholder Button</a>
+                        <a href="https://www.healthymke.com/well" 
+                           class="btn btn-light"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           Visit Website
+                        </a>
                     </div>
                 </div>
             </article>
             <article class="card mt-3 mb-3">
-                <h3 class="card-header">Resource 4</h3>
+                <h3 class="card-header">NourishMKE</h3>
                 <div class="row align-items-center p-3">
                     <div class="col-md-2">
                         <img class="img-fluid"
                         alt="Placeholder image"
-                        src="img/placeholder_img.png"
+                        src="img/nourish-mke.png"
                         />
                     </div>
                     <div class="col-md-7">
-                        <p class="mb-0">Resource 4 Description</p>
+                        <p class="mb-0">
+                            Community food centers and information about grocery assistance.
+                        </p>
                     </div>
                     <div class="col-md-3 text-end">
-                        <a href="#" class="btn btn-light">Placeholder Button</a>
+                        <a href="https://www.nourishmke.org/" 
+                           class="btn btn-light"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           Visit Website
+                        </a>
                     </div>
                 </div>
             </article>
         </section>
+        <!--Created a section for a future interactive map with dropdown options for filtering-->
         <section>
           <div class="row justify-content-center">
             <div class="col-md-6 text-center">
@@ -171,23 +216,26 @@
                     <select id="campusLocation" class="form-select">
                         <option value="">Select a location</option>
                         <option value="library">Haggerty Library</option>
-                        <option value="sucessCenter">Student Success Center</option>
+                        <option value="successCenter">Student Success Center</option>
                         <option value="counselingCenter">Counseling and Wellness Center</option>
                     </select>
                     <div class="d-flex justify-content-center mt-4">
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" id="findLocationButton"
+                            class="btn btn-primary">
                             Find a Location
                         </button>
                     </div>
                 </div>
             </div>
           </div>
+          <!--Displayed the placeholder map below the dropdown location options-->
           <img class="d-block mx-auto w-50"
            alt="A placeholder map of Mount Mary University."
            src="img/mt_mary_map.png"
            />
         </section>
     </main>
+    <!--Added additional navigation links in the footer for another way to access other pages-->
     <footer class="py-4 mt-4">
         <nav class="container">
             <ul class="list-unstyled d-flex justify-content-center gap-3">
@@ -200,7 +248,7 @@
             </ul>
         </nav>
     </footer>
-
+    <!--Link to JavaScript-->
     <script src="./js/script.js"></script>
 </body>
 </html>
