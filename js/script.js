@@ -301,6 +301,199 @@ flipTriggers.forEach(function(title) {
         let eventCard = title.closest(".flip-card");
 
         // Toggle the flipped class to show or hide the event details
-        eventCard.classList.toggle("flipped");
+        eventCard.classList.toggle("is-flipped");
     });
 });
+
+
+// Checks whether the campus map exists on the current page
+let campusMapElement = document.querySelector("#campusMap");
+
+if (campusMapElement) {
+
+    // Creates the map centered on Mount Mary University
+    let campusMap = L.map("campusMap").setView(
+        [43.0723, -88.03158],
+        16
+    );
+
+    // Adds the OpenStreetMap map tiles
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(campusMap);
+
+    // Stores campus building information for the campus map
+    let campusLocations = [
+        {
+            id: "notre-dame",
+            name: "Notre Dame Hall",
+            category: ["academic", "services"],
+            description: "Admissions, Welcome Center, administration offices, classrooms, Chapel, and Food Lab.",
+            coordinates: [43.072553, -88.030709]
+        },
+        {
+            id: "caroline",
+            name: "Caroline Hall",
+            category: ["academic", "services", "dining"],
+            description: "Bookstore, Health Sciences Center, Nursing Skills Lab, Student Life Offices, and student residence.",
+            coordinates: [43.071820, -88.030993]
+        },
+        {
+            id: "gerhardinger",
+            name: "Gerhardinger Center",
+            category: ["academic", "dining"],
+            description: "Cyber Café, science labs, and classrooms.",
+            coordinates: [43.072741, -88.030060]
+        },
+        {
+            id: "bergstrom",
+            name: "Bergstrom Hall",
+            category: ["services", "dining"],
+            description: "Alumnae Conference Center, Campus Security, dining rooms, mail room, and archives.",
+            coordinates: [43.071581, -88.030183]
+        },
+        {
+            id: "bloechl",
+            name: "Bloechl Center",
+            category: ["wellness"],
+            description: "Gym and fitness center.",
+            coordinates: [43.070629, -88.030044]
+        },
+        {
+            id: "library",
+            name: "Haggerty Library",
+            category: ["academic", "wellness", "services"],
+            description: "Library, Student Success Center, Counseling and Wellness Center, Promise Program, Tech Haven, and IT Helpdesk.",
+            coordinates: [43.071718, -88.031986]
+        },
+        {
+            id: "kostka",
+            name: "Kostka Hall",
+            category: ["academic"],
+            description: "Faculty offices.",
+            coordinates: [43.073225, -88.031379]
+        },
+        {
+            id: "fidelis",
+            name: "Fidelis Hall",
+            category: ["academic"],
+            description: "Faculty offices and fashion labs.",
+            coordinates: [43.073235, -88.030945]
+        },
+        {
+            id: "dominic",
+            name: "Dominic Hall",
+            category: ["services"],
+            description: "Campus Facilities and Marketing & Communications.",
+            coordinates: [43.072201, -88.029923]
+        },
+        {
+            id: "trinity",
+            name: "Trinity Woods",
+            category: ["services"],
+            description: "Intergenerational housing community.",
+            coordinates: [43.074032, -88.031805]
+        },
+        {
+            id: "parking-a",
+            name: "Parking Lot A",
+            category: ["parking"],
+            description: "Near Notre Dame Hall, with faculty/staff parking and reserved admission visitor spaces.",
+            coordinates: [43.072506, -88.029393]
+        },
+        {
+            id: "parking-b",
+            name: "Parking Lot B",
+            category: ["parking"],
+            description: "Parking in the upper/rear area of campus.",
+            coordinates: [43.071521, -88.028811]
+        },
+        {
+            id: "parking-c",
+            name: "Parking Lot C",
+            category: ["parking"],
+            description: "Parking in the south/front area of campus.",
+            coordinates: [43.073456, -88.032000]
+        }
+    ];
+
+    // Stores the Leaflet markers so the filters can control them
+    let campusMarkers = {};
+
+    // Creates a marker for each campus location
+    campusLocations.forEach(function(location) {
+
+        let marker = L.marker(location.coordinates);
+
+        // Shows the building name and resources when the marker is clicked
+        marker.bindPopup(
+            "<strong>" + location.name + "</strong><br>" +
+            location.description
+        );
+
+        // Shows the building name and resources when hovering over the marker
+        marker.bindTooltip(
+            "<strong>" + location.name + "</strong><br>" +
+            location.description
+        );
+
+        // Adds the marker to the map initially
+        marker.addTo(campusMap);
+
+        // Saves the marker using the location ID
+        campusMarkers[location.id] = marker;
+    });
+
+    // Selects the category and location dropdowns
+    let campusCategory = document.querySelector("#campusCategory");
+    let campusLocation = document.querySelector("#campusLocation");
+
+    // Filters the map markers when a category is selected
+    function filterCampusMarkers() {
+
+        let selectedCategory = campusCategory.value;
+        let selectedLocation = campusLocation.value;
+
+        campusLocations.forEach(function(location) {
+
+            let marker = campusMarkers[location.id];
+
+            // Checks whether the location matches the selected category
+            let matchesCategory =
+                selectedCategory === "all" ||
+                location.category.includes(selectedCategory);
+
+            // Checks whether the location matches the selected building
+            let matchesLocation =
+                selectedLocation === "all" ||
+                location.id === selectedLocation;
+
+            // Displays the marker only if it matches both filters
+            if (matchesCategory && matchesLocation) {
+                marker.addTo(campusMap);
+            } else {
+                marker.remove();
+            }
+        });
+
+        // Zooms to the selected location when one is chosen
+        if (selectedLocation !== "all") {
+
+            let selectedMarker = campusMarkers[selectedLocation];
+
+            // Moves the map and opens the selected marker's information
+            if (selectedMarker && campusMap.hasLayer(selectedMarker)) {
+                campusMap.setView(selectedMarker.getLatLng(), 18);
+                selectedMarker.openPopup();
+            }
+        }
+    }
+
+    // Runs the filter whenever either dropdown changes
+    campusCategory.addEventListener("change", filterCampusMarkers);
+    campusLocation.addEventListener("change", filterCampusMarkers);
+}
+
+
