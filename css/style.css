@@ -153,3 +153,20 @@ p {
     border: 2px solid #17365D;
     border-radius: 8px;
 }
+@media (max-width: 600px) {
+    .resources-page img[src="img/mount_mary_uni.jpg"] {
+    width: 100%;
+    height: auto;
+    }
+    .header-image {
+        width: 100px;
+    }
+        header {
+        max-height: 200px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .resources-page h1, .events-page h1, .dining-page h1  {
+        font-size: 44px;
+    }
+}
