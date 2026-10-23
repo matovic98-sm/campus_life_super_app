@@ -130,10 +130,10 @@ p {
     height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    border: 1px outset rgb(22, 59, 126);
+    border: 2px outset rgb(22, 59, 126);
     border-radius: 8px;
     overflow: hidden;
-    background-color:rgb(189, 207, 224);
+    background-color:#c9dbe6;
 }
 .events-page .flip-card-back {
     transform: rotateY(180deg);
@@ -169,4 +169,47 @@ p {
     .resources-page h1, .events-page h1, .dining-page h1  {
         font-size: 44px;
     }
+        .events-page .calendar-grid {
+        gap: 2px;
+    }
+}
+.events-page .campus-calendar {
+    padding: 15px;
+    border: 1px solid #556476;
+    border-radius: 8px;
+    background-color: #ebf2f6;
+}
+.events-page .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+}
+.events-page .calendar-weekday {
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 0;
+    color: #17365D;
+}
+.events-page .calendar-day {
+    min-width: 0;
+    min-height: 42px;
+    padding: 8px 0;
+    border: 1px solid #3a4653;
+    border-radius: 5px;
+    background-color: #f6f8fb;
+    color: #17365D;
+    cursor: pointer;
+}
+.events-page .calendar-day.has-events {
+    background-color: #c6c098;
+    border: 2px solid #c5b234;
+    font-weight: bold;
+}
+.events-page .calendar-day.selected {
+    background-color: #17365D;
+    border: 2px solid #17365D;
+    color: white;
+}
+.events-page .calendar-day:hover {
+    outline: 2px solid #94B0DA;
 }
