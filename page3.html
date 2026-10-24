@@ -78,17 +78,7 @@
                         <!--Created three dropdown option menus for date, meal type, and dietary needs-->
                         <div class="col-md-6">
                             <h2 class="h5 mb-3 text-center">Find a Menu</h2>
-                            <div class="mb-3">
-                                <label for="menuDate" class="form-label">Date</label>
-                                <select id="menuDate" class="form-select">
-                                    <option value="">Select a date</option>
-                                    <option value="today">Today</option>
-                                    <option value="tomorrow">Tomorrow</option>
-                                    <option value="monday">Monday</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
+                            <div class="mb-3 pt-4">
                                 <label for="mealType" class="form-label">Meal Type</label>
                                 <select id="mealType" class="form-select">
                                     <option value="">Select a meal</option>
@@ -102,15 +92,17 @@
                                 <label for="dietaryNeeds" class="form-label">Dietary Needs</label>
                                 <select id="dietaryNeeds" class="form-select">
                                     <option value="">Select dietary needs</option>
+                                    <option value="no-preference">No preference</option>
                                     <option value="vegetarian">Vegetarian</option>
                                     <option value="vegan">Vegan</option>
                                     <option value="gluten-free">Gluten-free</option>
                                     <option value="dairy-free">Dairy-free</option>
-                                    <option value="no-preference">No preference</option>
+                                    <option value="nut-free">Nut-free</option>
+                                    <option value="protein">Protein</option>                                  
                                 </select>
 
                                 <div class="d-flex justify-content-center mt-4">
-                                    <button type="button" class="btn btn-primary">Find Menu</button>
+                                    <button type="button" id="findMenuButton" class="btn btn-primary">Find Menu</button>
                                 </div>
                             </div>
                         </div>
@@ -122,42 +114,69 @@
         <section class="row">
             <h2 class="text-center mb-4 mt-4">Menu Items</h2>
             <div class="card col-md-12 mt-2 ps-4 menu-items-card">
-                <!--Separated each menu item and its description as articles-->
-                <article>
-                    <h3 class="mt-4">Grilled Chicken Rice Bowl</h3>
-                    <p class="mb-3">
-                        Grilled chicken served over rice with a selection of vegetables.
-                    </p>
+                <article data-meal="lunch" data-dietary="gluten-free dairy-free"
+                    class="d-flex justify-content-between align-items-center gap-3">
+                    <div>
+                        <h3 class="mt-4">Grilled Chicken Rice Bowl</h3>
+                        <p class="mb-3">Grilled chicken served over rice with a selection of vegetables.</p>
+                    </div>
+                    <div class="dietary-labels text-nowrap">
+                        <span title="Gluten-free">Gluten-free</span>
+                        <span title="Dairy-free">Dairy-free</span>
+                        <span title="Protein">Protein</span>
+                    </div>
                 </article>
-                <article>
-                    <h3 class="mt-4">Garden Vegetable Pasta</h3>
-                    <p class="mb-3">
-                        Pasta tossed with garden vegetables and tomato sauce.
-                    </p>
+                <article data-meal="dinner" data-dietary="vegetarian dairy-free"
+                    class="d-flex justify-content-between align-items-center gap-3">
+                    <div>
+                        <h3 class="mt-4">Garden Vegetable Pasta</h3>
+                        <p class="mb-3">Pasta tossed with garden vegetables and tomato sauce.</p>
+                    </div>
+                    <div class="dietary-labels text-nowrap">
+                        <span title="Vegan">Vegan</span>
+                        <span title="Dairy-free">Dairy-free</span>
+                    </div>
                 </article>
-                <article>
-                    <h3 class="mt-4">Turkey and Cheese Sandwich</h3>
-                    <p class="mb-3">
-                        Sliced turkey and cheese served on bread with fresh lettuce.
-                    </p>
+                <article data-meal="lunch" data-dietary=""
+                    class="d-flex justify-content-between align-items-center gap-3">
+                    <div>
+                        <h3 class="mt-4">Turkey and Cheese Sandwich</h3>
+                        <p class="mb-3">Sliced turkey and cheese served on bread with fresh lettuce.</p>
+                    </div>
+                    <div class="dietary-labels text-nowrap">
+                        <span title="Protein">Protein</span>
+                    </div>
                 </article>
-                <article>
-                    <h3 class="mt-4">Black Bean Veggie Burger</h3>
-                    <p class="mb-3">
-                        A black bean burger served on a bun with lettuce and tomato.
-                    </p>
+                <article data-meal="lunch" data-dietary="vegetarian"
+                    class="d-flex justify-content-between align-items-center gap-3">
+                    <div>
+                        <h3 class="mt-4">Black Bean Veggie Burger</h3>
+                        <p class="mb-3">A black bean burger served on a bun with lettuce and tomato.</p>
+                    </div>
+                    <div class="dietary-labels text-nowrap">
+                        <span title="Vegetarian">Vegetarian</span>
+                    </div>
                 </article>
-                <article>
-                    <h3 class="mt-4">Berry Yogurt Parfait</h3>
-                    <p class="mb-3">
-                        Yogurt layered with berries and granola.
-                    </p>
+                <article data-meal="breakfast" data-dietary="vegetarian gluten-free"
+                    class="d-flex justify-content-between align-items-center gap-3">
+                    <div>
+                        <h3 class="mt-4">Berry Yogurt Parfait</h3>
+                        <p class="mb-3">Yogurt layered with berries and granola.</p>
+                    </div>
+                    <div class="dietary-labels text-nowrap">
+                        <span title="Vegetarian">Vegetarian</span>
+                        <span title="Gluten-free">Gluten-free</span>
+                    </div>
                 </article>
-                <article>
-                    <h3 class="mt-4">Chocolate Chip Cookie</h3>
-                    <p class="mb-3">
-                        A cookie with chocolate chips, offered as a sample dessert item.
-                    </p>
+                <article data-meal="dinner" data-dietary="vegetarian"
+                    class="d-flex justify-content-between align-items-center gap-3">
+                    <div>
+                        <h3 class="mt-4">Chocolate Chip Cookie</h3>
+                        <p class="mb-3">A cookie with chocolate chips, offered as a sample dessert item.</p>
+                    </div>
+                    <div class="dietary-labels text-nowrap">
+                        <span title="Vegetarian">Vegetarian</span>
+                    </div>
                 </article>
             </div>
         </section>

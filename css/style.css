@@ -92,8 +92,11 @@ p {
     margin-bottom:8px;
 }
 .resources-page .resources-card article:last-child,
-.dining-page .menu-items-card article:last-child {
+.dining-page .menu-items-card article.last-visible-item {
     border-bottom: none;
+}
+.dining-page .menu-items-card article.last-visible-item {
+    margin-bottom: 0;
 }
 .resources-page article.card {
     background-color:rgb(195, 208, 220);
@@ -212,4 +215,18 @@ p {
 }
 .events-page .calendar-day:hover {
     outline: 2px solid #94B0DA;
+}
+.dietary-labels {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.dietary-labels span {
+    display: inline-block;
+    padding: 6px 8px;
+    border: 1px solid #f8fafc;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    background-color: rgb(225, 239, 252);
 }

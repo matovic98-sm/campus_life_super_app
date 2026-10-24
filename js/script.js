@@ -786,3 +786,84 @@ if (calendarGrid) {
 }
 
 
+/* Connected the dining menu filters to the Find Menu button. */
+document.addEventListener("DOMContentLoaded", function () {
+    // Selected the filters, button, and menu items.
+    const mealTypeFilter = document.querySelector("#mealType");
+    const dietaryNeedsFilter = document.querySelector("#dietaryNeeds");
+    const findMenuButton = document.querySelector("#findMenuButton");
+    const menuItems = document.querySelectorAll(".menu-items-card article");
+    const menuCard = document.querySelector(".menu-items-card");
+
+    // Checked that the dining page elements exist before adding functionality.
+    if (!mealTypeFilter || !dietaryNeedsFilter ||
+        !findMenuButton || !menuCard || menuItems.length === 0) {
+        return;
+    }
+
+    // Created a message for when no menu items match.
+    const noMenuMessage = document.createElement("p");
+    noMenuMessage.id = "noMenuMessage";
+    noMenuMessage.className = "text-center mt-3";
+    noMenuMessage.textContent = "No menu items match your selections.";
+    noMenuMessage.hidden = true;
+    menuCard.appendChild(noMenuMessage);
+
+
+    // Filtered the menu items using the selected options.
+    function filterMenuItems() {
+        const selectedMeal = mealTypeFilter.value;
+        const selectedDiet = dietaryNeedsFilter.value;
+        let visibleItems = 0;
+
+        // Checked each menu item.
+        menuItems.forEach(function (item) {
+            const itemMeal = item.dataset.meal;
+            const itemDietary = item.dataset.dietary || "";
+            const dietaryCategories = itemDietary.split(" ");
+
+            // Matched the meal type, or included all meals if none was selected.
+            const matchesMeal =
+                selectedMeal === "" || itemMeal === selectedMeal;
+
+            // Matched the dietary need, or included all items for no preference.
+            const matchesDiet =
+                selectedDiet === "" ||
+                selectedDiet === "no-preference" ||
+                dietaryCategories.includes(selectedDiet);
+
+            // Displayed the item only if both filters matched.
+            if (matchesMeal && matchesDiet) {
+                item.classList.remove("d-none");
+                visibleItems++;
+            } else {
+                item.classList.add("d-none");
+            }
+        });
+
+        // Removed the special class from all menu items.
+        menuItems.forEach(function (item) {
+            item.classList.remove("last-visible-item");
+        });
+
+        // Found the menu items that are currently visible.
+        const visibleMenuItems = document.querySelectorAll(
+            ".menu-items-card article:not(.d-none)"
+        );
+
+        // Removed the bottom border from the last visible menu item.
+        if (visibleMenuItems.length > 0) {
+            visibleMenuItems[visibleMenuItems.length - 1]
+                .classList.add("last-visible-item");
+        }
+
+        // Displayed a message if no items matched.
+        noMenuMessage.hidden = visibleItems > 0;
+    }
+
+    // Ran the filter when the button was clicked.
+    findMenuButton.addEventListener("click", filterMenuItems);
+});
+
+
+
