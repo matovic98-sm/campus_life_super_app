@@ -31,7 +31,7 @@ if (eventContainer) {
     // Requested upcoming Milwaukee events, sorted by date.
     const eventURL =
         "https://findlocal.community/api/events" +
-        "?city=milwaukee&when=anytime&sort=date&limit=40";
+        "?city=milwaukee&when=anytime&sort=date&limit=45";
     
     // Requested events from the Find Local API.
     fetch(eventURL, {
@@ -217,7 +217,7 @@ if (eventContainer) {
                 // Built a card for the event.
                 eventHTML +=
                     '<div class="col-md-6 mb-3">' +
-                        '<div class="card h-100 p-3">' +
+                        '<div class="card event-item h-100 p-3">' +
                             '<h3 class="h5">' + safeName + '</h3>' +
                             '<p><strong>Date:</strong> ' + safeDate +
                                 (safeTime ? " at " + safeTime : "") +
@@ -325,7 +325,7 @@ if (diningContainer) {
                 // Added the restaurant card to the HTML.
                 restaurantHTML +=
                     '<div class="col-md-6 mb-3">' +
-                        '<div class="card h-100 p-3">' +
+                        '<div class="card dining-item h-100 p-3">' +
                             '<h3 class="h5">' + safeName + '</h3>' +
                             '<p><strong>Address:</strong> ' +
                                 safeAddress + ', Milwaukee, WI</p>' +
