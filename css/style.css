@@ -1,54 +1,68 @@
+/*Changed the color of the header navigation links and removed the underline*/
 header nav a {
     color: white;
     text-decoration: none;
 }
+/*Changes the header navigation link color when user's hover over it*/
 header nav a:hover {
     color: #c5b234;
 }
+/*Sets the width of the header image*/
 .header-image {
     width:150px;
 }
+/*Changes the background color, text color, and border color of the footer navigation buttons when user's hover over them*/
 footer nav a.btn-light:hover {
     color:#c5b234;
     background-color: rgb(22,29,126);
     border-color:#c5b234;
 }
+/*Changes the default background color of the footer navigation buttons*/
 footer nav a.btn-light {
     background-color: lightsteelblue;
 }
+/*Styles the footer with a dark blue background and a top gold border*/
 footer {
     background-color:rgb(22, 59, 126);
     border-top: 6px solid #c5b234;
 }
+/*Styles the header with a dark blue background, a gold bottom border, and spacing*/
 header {
     border-bottom: 6px solid #c5b234;
     padding-bottom: 10px;
     background-color: rgb(22, 59, 126);
     margin-bottom: 30px;
 }
+/*Sets the background color for all pages*/
 body {
     background-color:rgb(191, 203, 219);
 }
+/*Sets the font size, font weight, and font family for main headings*/
 h1 {
-    font: size 48px;
+    font-size: 48px;
     font-weight: bold;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
+/*Adds a semi-transparent background behind the dining page's main heading for improved readability*/
 .dining-page h1 {
     background-color: rgba(255, 255, 255, 0.5);
 }
+/*Sets the font size and family for second-level headings*/
 h2 {
     font-size: 38px;
     font-family:Georgia, 'Times New Roman', Times, serif
 }
+/*Sets the font size and family for third-level headings*/
 h3 {
     font-size:28px;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
+/*Sets the font size and family for paragraph text*/
 p {
     font-size: 18px;
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
+/*Adds a food image as the background for the campus dining hours and dropdown option filters*/
 .dining-page .campus-dining-section {
     background-image: url("../img/foods_image.jpg");
     background-size: cover;
@@ -58,6 +72,7 @@ p {
     position: relative;
     isolation: isolate;
 }
+/*Creates a semi-transparent white overlay over the background image*/
 .dining-page .campus-dining-section::before {
     content: "";
     position: absolute;
@@ -65,55 +80,67 @@ p {
     background-color: rgba(255, 255, 255, 0.55);
     z-index: -1;
 }
+/*Keeps the card container on the dining page positioned over the background overlay*/
 .dining-page .card-container {
     position: relative;
 }
+/*Styles the card containing the dining hours and menu filter with a white background and rounded corners*/
 .dining-page .card-container .card {
     background-color: rgba(255, 255, 255, 0.90);
     border: 1px solid #cccccc;
     border-radius: 8px;
 }
+/*Sets the main image on the resources page to fill its container with a fixed height and rounded corners*/
 .resources-page .resources-image {
     width: 100%;
     height: 1100px;
     object-fit: cover;
     border-radius:10px;
 }
+/*Styles the resources and menu item cards with a light blue background and gold border*/
 .resources-page .resources-card,
 .dining-page .menu-items-card {
     background-color: lightsteelblue;
     border: 2px solid #c5b234;
     box-sizing: border-box;
 }
+/*Separates individual resources and menu items using a dashed gold border*/
 .resources-page .resources-card article,
 .dining-page .menu-items-card article {
     border-bottom:3px dashed #c5b234;
     margin-bottom:8px;
 }
+/*Removes the bottom border from the last resource on the card and the last visible menu item*/
 .resources-page .resources-card article:last-child,
 .dining-page .menu-items-card article.last-visible-item {
     border-bottom: none;
 }
+/*Removes the bottom margin from the last visible menu item*/
 .dining-page .menu-items-card article.last-visible-item {
     margin-bottom: 0;
 }
+/*Style community resource cards with a blue-gray background and gray raised border*/
 .resources-page article.card {
     background-color:rgb(195, 208, 220);
     border: 3px outset rgb(147, 160, 171);
     border-radius: 8px;
 }
+/*Set third-level headings on the resources page to have a dark blue background and nearly white text*/
 .resources-page h3 {
     background-color:rgb(22, 59, 126);
     color:#cccccc;
 }
+/*Adds a space above the resources header*/
 .resources-header {
     padding-top:20px;
 }
+/*Sets up event cards with a 3D perspective and a fixed height*/
 .events-page .flip-card {
     perspective: 1000px;
     height: 220px;
     margin-bottom: 1rem;
 }
+/*Sets the size and animation of the inner flip-card element*/
 .events-page .flip-card-inner {
     position: relative;
     width: 100%;
@@ -121,9 +148,11 @@ p {
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
+/*Rotates the inner card when the card has the is-flipped class*/
 .events-page .flip-card.is-flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
+/*Styles both sides of the flip-cards position and color, hiding whichever side is not active*/
 .events-page .flip-card-front,
 .events-page .flip-card-back {
     position: absolute;
@@ -143,37 +172,45 @@ p {
     #c9b574 100%
     );
 }
+/*Rotates the back of the card so it appears when the card flips*/
 .events-page .flip-card-back {
     transform: rotateY(180deg);
 }
+/*Allows the row containing the flip-card title and image to grow and fill the available space*/
 .events-page .flip-card-front .row {
     flex: 1 1 auto;
     align-items: stretch;
 }
+/*Centers the title horizontally and vertically in its column*/
 .events-page .flip-card-front .row > .col-8 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+/*Centers the image in its column and add space below it*/
 .events-page .flip-card-front .row > .col-4 {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-bottom: 12px;
 }
+/*Sets the text color of second-level headings on the events page*/
 .events-page h2 {
     color:black;
 }
+/*Sets the size and color of the links on the front of the flip-cards*/
 .flip-card-front a {
     font-size: 22px;
     color:rgb(22, 59, 126);
 }
+/*Sets the width, height, border color of the campus map and gives it rounded corners*/
 #campusMap {
     width: 100%;
     height: 500px;
     border: 2px solid #17365D;
     border-radius: 8px;
 }
+/*Applies responsive styling for screens 600px or smaller, reducing the size of the resources page image and the header, and adjusting main heading size*/
 @media (max-width: 600px) {
     .resources-page img[src="img/mount_mary_uni.jpg"] {
     width: 100%;
@@ -194,23 +231,27 @@ p {
         gap: 2px;
     }
 }
+/*Adds padding, a border, rounded corners, and a gold background color to the campus calendar*/
 .events-page .campus-calendar {
     padding: 15px;
     border: 2px groove #caae6d;
     border-radius: 8px;
     background-color: #e4e2c5;
 }
+/*Arranges the calendar into seven equal width columns for the days of the week*/
 .events-page .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 4px;
 }
+/*Centers weekday labels and sets spacing and text color*/
 .events-page .calendar-weekday {
     text-align: center;
     font-weight: bold;
     padding: 8px 0;
     color: #17365D;
 }
+/*Styles individual calendar day buttons*/
 .events-page .calendar-day {
     min-width: 0;
     min-height: 42px;
@@ -220,24 +261,29 @@ p {
     color: #17365D;
     cursor: pointer;
 }
+/*Highlights calendar days that have events*/
 .events-page .calendar-day.has-events {
     background-color: #c8ab70;
     border: 2px solid #aa771c;
     font-weight: bold;
 }
+/*Highlights the currently selected calendar day*/
 .events-page .calendar-day.selected {
     background-color: #17365D;
     border: 2px solid #17365D;
     color: white;
 }
+/*Adds an outline when the user hovers over a calendar day*/
 .events-page .calendar-day:hover {
     outline: 2px solid #aa771c;
 }
+/*Arranges dietary labels in a row with spacing and center alignment*/
 .dietary-labels {
     display: flex;
     gap: 8px;
     align-items: center;
 }
+/*Styles individual dietary labels with padding, a border, and a blue-white background*/
 .dietary-labels span {
     display: inline-block;
     padding: 6px 8px;
@@ -247,11 +293,13 @@ p {
     font-weight: bold;
     background-color: rgb(225, 239, 252);
 }
+/*Adds spacing above and below the event and dining content containers*/
 #event-container,
 #dining-container {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
+/*Styles API event cards and API dining cards with padding, a blue-gray background, and a gold border */
 .events-page .event-item,
 .dining-page .dining-item {
     height: 100%;
@@ -262,11 +310,13 @@ p {
     box-sizing: border-box;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
+/*Adds a shadow and slightly raises the community event and local dining cards when hovered over*/
 .events-page .event-item:hover,
 .dining-page .dining-item:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transform: translateY(-3px);
 }
+/*Styles headings inside community events and local dining cards*/
 .event-item h3,
 .dining-item h3 {
     color: #203b5b;
@@ -274,16 +324,19 @@ p {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
 }
+/*Improves spacing of paragraph text inside community events and local dining cards*/
 .event-item p,
 .dining-item p {
     line-height: 1.6;
     margin-bottom: 0.5rem;
 }
+/*Makes links inside community events and local dining cards bold and dark blue*/
 .event-item a,
 .dining-item a {
     font-weight: bold;
     color:#17365D
 }
+/*Sets the size and display behavior of campus event cards*/
 .events-page .flip-card-front .event-image {
     width: 100% !important;
     height: 120px !important;

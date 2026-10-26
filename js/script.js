@@ -25,7 +25,7 @@ if (eventContainer) {
     eventContainer.textContent = "Loading Milwaukee community events...";
 
     // Stored the Find Local API key.
-    const findLocalKey = "Hvy9cMKbHNAgoPMLzpYxwK";
+    const findLocalKey = "3Gg2NmhRQyUTnsYJJiFDLZ";
 
     // Created the API URL for upcoming Milwaukee events.
     // Requested upcoming Milwaukee events, sorted by date.
@@ -42,12 +42,22 @@ if (eventContainer) {
         .then(function(response) {
             // Checked whether the request succeeded.
             if (!response.ok) {
-                throw new Error("Could not load community events.");
+                if (response.status === 429) {
+                    throw new Error(
+                        "Too many requests. Please wait and try again later."
+                    );
+                }
+
+                throw new Error(
+                    "Could not load community events. Status: " +
+                    response.status
+                );
             }
 
             // Converted the response into JSON data.
             return response.json();
         })
+
         .then(function(data) {
             // Checked whether the API returned events.
             if (!data.data || data.data.length === 0) {
